@@ -27,12 +27,7 @@ export default function WishlistContextProvider({children}:{children:ReactNode})
     async function getWishlist() {
          const token = await getUserToken()
         setIsLoading2(true)
-        const response = await fetch('https://ecommerce.routemisr.com/api/v1/wishlist',{
-            headers: {
-                token:token!
-            }
-        }
-        )
+        const response = await fetch('/api/get-wishlist')
         const data:WishlistResponse = await response.json()
         console.log(data);
         

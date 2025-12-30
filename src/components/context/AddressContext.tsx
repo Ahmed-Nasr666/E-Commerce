@@ -26,14 +26,7 @@ export default function AddressContextProvider({children}:{children:ReactNode}){
     async function getAddress() {
         setIsLoading(true)
         const token = await getUserToken()
-         const response = await fetch(`https://ecommerce.routemisr.com/api/v1/addresses`,{
-        method:"GET",
-         headers:{
-         token: token!,
-          
-        }
-  
-      })
+         const response = await fetch(`/api/addresses`)
         const data:Address = await response.json()
         console.log(data);
         
