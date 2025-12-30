@@ -32,7 +32,7 @@ export default function Navbar() {
   const {cartData,isLoading} = useContext(CartContext)
   const {wishlistData,isLoading2} =  useContext(WishlistContext)
   return <>
-  <nav className='bg-gray-100 text-2xl py-3 font-semibold'>
+  <nav className='bg-gray-100 text-2xl py-3 font-semibold fixed start-0 top-0 end-0'>
   <div className="max-w-7xl mx-auto px-4">
     <div className='flex flex-col md:flex-row md:items-center md:justify-between gap-4'>
 
