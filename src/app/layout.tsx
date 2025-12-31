@@ -42,7 +42,7 @@ export default function RootLayout({
               <WishlistContextProvider>
             <CartContextProvider>
         <Navbar />
-      <div className="max-w-7xl mx-auto pt-4 mt-15">
+      <div className="max-w-7xl mx-auto pt-4 mt-15  ">
         {children}
         <Toaster />
       </div>
