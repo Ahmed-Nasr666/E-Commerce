@@ -22,6 +22,7 @@ import { HeartIcon, Loader, ShoppingCartIcon, UserIcon } from "lucide-react"
 import { WishlistContext } from "../context/wishlistContext"
 import { signOut, useSession } from "next-auth/react"
 import { CartContext } from "../context/CartContext"
+import { Button } from "../ui/button"
 
 export default function Navbar() {
   const { cartData, isLoading } = useContext(CartContext)
@@ -73,9 +74,9 @@ export default function Navbar() {
               </h2>
             )}
 
-            <DropdownMenu>
-              <DropdownMenuTrigger>
-                <UserIcon />
+            <DropdownMenu modal={false}>
+              <DropdownMenuTrigger >
+                <UserIcon  className="me-3"/>
               </DropdownMenuTrigger>
               <DropdownMenuContent>
                 <DropdownMenuLabel>My Account</DropdownMenuLabel>
@@ -112,7 +113,7 @@ export default function Navbar() {
             {session.status === "authenticated" && (
               <div className="hidden md:flex items-center gap-4">
                 <IconBadge
-                  href="/carts"
+                  href="/cart"
                   icon={<ShoppingCartIcon />}
                   value={cartData?.numOfCartItems}
                   loading={isLoading}
@@ -150,7 +151,7 @@ export default function Navbar() {
             {session.status === "authenticated" && (
               <div className="flex gap-4 mt-3">
                 <IconBadge
-                  href="/carts"
+                  href="/cart"
                   icon={<ShoppingCartIcon />}
                   value={cartData?.numOfCartItems}
                   loading={isLoading}

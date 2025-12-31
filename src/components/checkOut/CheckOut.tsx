@@ -81,12 +81,13 @@ const [isDisabled, setIsDisabled] = useState(true)
     
   }
   return <>
-   <Dialog>
-      <form>
-        <DialogTrigger asChild>
-          <Button className="w-full bg-black cursor-pointer text-white py-4 rounded-xl mt-8 text-lg font-bold hover:bg-white transition" variant="outline">Proceed to Checkout</Button>
+
+     <Dialog >
+      <form >
+        <DialogTrigger  asChild>
+          <Button  className="w-full bg-black cursor-pointer text-white py-4 rounded-xl mt-8 text-lg font-bold hover:bg-white transition" variant="outline">Proceed to Checkout</Button>
         </DialogTrigger>
-        <DialogContent className="sm:max-w-[425px]">
+        <DialogContent  className="sm:max-w-[425px]">
           <DialogHeader>
             <DialogTitle>Add Shipping Address</DialogTitle>
             <DialogDescription>
@@ -118,5 +119,6 @@ const [isDisabled, setIsDisabled] = useState(true)
         </DialogContent>
       </form>
     </Dialog>
+
   </>
 }

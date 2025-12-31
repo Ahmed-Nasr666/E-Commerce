@@ -62,7 +62,7 @@ export default function CartPage() {
     
 
     if(data.message=="success"){
-      setCartData(null)
+      getCart()
     }
     setIsClearing(false)
   }

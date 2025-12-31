@@ -30,6 +30,7 @@ const formSchema = z.object({
 type formField=z.infer<typeof formSchema>
 export default function Register() {
     const [isLoading, setIsLoading] = useState(false)
+    const [isError,setIsError] = useState(null)
     let searchParams = useSearchParams()
     console.log(searchParams.get('error'));
 
@@ -65,6 +66,8 @@ export default function Register() {
       
       if(data.message == "success"){
         window.location.href=('/login')
+      }else{
+        setIsError(data.message)
       }
      
       setIsLoading(false)
@@ -143,6 +146,7 @@ export default function Register() {
           )}
         />
         <Button className='w-full cursor-pointer' type="submit" >{isLoading && <Loader className='animate-spin'/>} Submit</Button>
+        <p className='text-red-600 text-center'>{isError}</p>
       </form>
     </Form>
    </Card>
