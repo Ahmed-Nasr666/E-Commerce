@@ -25,7 +25,7 @@ import { WishlistResponse } from '@/interface/wishlist'
 import Loading from '../loading'
 
 export default function page() {
-    let {wishlistData,isLoading2,setWishlistData,getWishlist} =  useContext(WishlistContext)
+    let {wishlistData,isLoading,setWishlistData,getWishlist} =  useContext(WishlistContext)
     const [removingId,setRemovingId] = useState<null|string>(null)
 
       if(wishlistData==null){
@@ -56,7 +56,7 @@ export default function page() {
   <div className='container py-6 px-4 mx-auto'>
     <h1 className='text-3xl font-bold'>Wishlist Card</h1>
     <p className='text-muted-foreground my-2'>numofWishlistItems in your card</p>
-    {isLoading2  ?<Loading/>: wishlistData?.count! >0 ? <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 mt-3'>
+    {isLoading  ?<Loading/>: wishlistData?.count! >0 ? <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 mt-3'>
     {wishlistData?.data.map((product)=> <div key={product.id}>
       <Card>
         <Link href={'/products/'+product.id}>
