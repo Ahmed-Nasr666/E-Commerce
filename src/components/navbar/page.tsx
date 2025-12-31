@@ -80,22 +80,32 @@ export default function Navbar() {
               <DropdownMenuContent>
                 <DropdownMenuLabel>My Account</DropdownMenuLabel>
                 <DropdownMenuSeparator />
-                {session.status === "authenticated" ? (
-                  <DropdownMenuItem
-                    onClick={() => signOut({ callbackUrl: "/" })}
-                  >
-                    Logout
-                  </DropdownMenuItem>
-                ) : (
-                  <>
-                    <Link href="/login">
-                      <DropdownMenuItem>Login</DropdownMenuItem>
-                    </Link>
-                    <Link href="/register">
-                      <DropdownMenuItem>Register</DropdownMenuItem>
-                    </Link>
-                  </>
-                )}
+              {session.status === "authenticated" ? (
+  <>
+    <Link href="/profile">
+      <DropdownMenuItem>
+        Profile
+      </DropdownMenuItem>
+    </Link>
+
+    <DropdownMenuItem
+      onClick={() => signOut({ callbackUrl: "/" })}
+    >
+      Logout
+    </DropdownMenuItem>
+  </>
+) : (
+  <>
+    <Link href="/login">
+      <DropdownMenuItem>Login</DropdownMenuItem>
+    </Link>
+
+    <Link href="/register">
+      <DropdownMenuItem>Register</DropdownMenuItem>
+    </Link>
+  </>
+)}
+
               </DropdownMenuContent>
             </DropdownMenu>
 
