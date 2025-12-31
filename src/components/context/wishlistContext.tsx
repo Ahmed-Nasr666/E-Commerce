@@ -45,3 +45,4 @@ export default function WishlistContextProvider({children}:{children:ReactNode})
         {children}
     </WishlistContext.Provider>
 }
+

@@ -26,7 +26,7 @@ export default function AddressContextProvider({children}:{children:ReactNode}){
     async function getAddress() {
         setIsLoading(true)
         const token = await getUserToken()
-         const response = await fetch(`/api/addresses`)
+         const response = await fetch(`/api/get-address`)
         const data:Address = await response.json()
         console.log(data);
         
